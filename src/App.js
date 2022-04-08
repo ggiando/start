@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Auth/Login/Login";
 import HomePage from "./pages/HomePage/Homepage";
-import Product from "./pages/Product/Product";
+import Vehicle from "./pages/Vehicle/Vehicle";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from "react";
 
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/auth/login" element={<Login />} />
         <Route path="/home" element={<HomePage />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/vehicle" element={<Vehicle />} />
       </Routes>
   );
 }

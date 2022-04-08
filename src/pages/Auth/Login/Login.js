@@ -12,7 +12,7 @@ function Login() {
         if (token) {
             navigate("/home");
         }
-    }, []);
+    });
 
     function submit(event) {
         event.preventDefault();
@@ -26,11 +26,6 @@ function Login() {
             localStorage.setItem("token", res.token);
             navigate("/home");
         });
-    }
-
-    function goToProduct() {
-        navigate("/peoduct");
-
     }
 
     function handleChange(event) {

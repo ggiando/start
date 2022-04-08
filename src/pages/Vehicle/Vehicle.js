@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
-function Product() {
+function Vehicle() {
 
     const navigate = useNavigate();
 
@@ -13,25 +13,23 @@ function Product() {
             navigate("/auth/login");
         }
 
-        loadProducts();
+        loadVehicles();
     });
 
-    function loadProducts() {
+    function loadVehicles() {
         fetch(`${process.env.REACT_APP_API_URL}/product`, {
             method: "GET",
-            body: JSON.stringify(values),
+            // body: JSON.stringify(values),
             headers: { "Content-Type": "application/json" }
         }).then((res) => res.json()).then(res => {
-            console.log(res.token);
-            localStorage.setItem("token", res.token);
-            navigate("/home");
+            console.log(res);
         });
     }
 
 
     return (
         <div>
-            Product list:
+            Vehicle list:
             <div>
 
             </div>
@@ -39,4 +37,4 @@ function Product() {
     )
 }
 
-export default Product;
+export default Vehicle;
