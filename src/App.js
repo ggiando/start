@@ -1,28 +1,22 @@
-import './App.css';
-
-import { useState, useEffect } from "react";
-
 import { Route, Routes } from "react-router-dom";
-
 import Login from "./pages/Auth/Login/Login";
+import HomePage from "./pages/HomePage/Homepage";
+import Product from "./pages/Product/Product";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from "react";
 
 function App() {
-  const [nclick, setCount] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
-
-  }, [nclick]);
-
-  function handleClick() {
-    setCount( nclick + 1);
-  }
-
+    navigate("/home");
+  })
+  
   return (
-    <div>
       <Routes>
-        <Route path="/auth/login" element={<Login />}></Route>
+        <Route path="/auth/login" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
-    </div>
   );
 }
 
